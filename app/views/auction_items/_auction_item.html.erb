@@ -1,0 +1,32 @@
+<div id="<%= dom_id auction_item %>">
+  <p>
+    <strong>Title:</strong>
+    <%= auction_item.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= auction_item.description %>
+  </p>
+
+  <p>
+    <strong>Starting bid:</strong>
+    <%= auction_item.starting_bid %>
+  </p>
+
+  <p>
+    <strong>Current bid:</strong>
+    <%= auction_item.current_bid %>
+  </p>
+
+  <p>
+    <strong>End time:</strong>
+    <%= auction_item.end_time %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= link_to auction_item.image.filename, auction_item.image if auction_item.image.attached? %>
+  </p>
+
+</div>

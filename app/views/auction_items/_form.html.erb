@@ -1,0 +1,47 @@
+<%= form_with(model: auction_item) do |form| %>
+  <% if auction_item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(auction_item.errors.count, "error") %> prohibited this auction_item from being saved:</h2>
+
+      <ul>
+        <% auction_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.textarea :description %>
+  </div>
+
+  <div>
+    <%= form.label :starting_bid, style: "display: block" %>
+    <%= form.text_field :starting_bid %>
+  </div>
+
+  <div>
+    <%= form.label :current_bid, style: "display: block" %>
+    <%= form.text_field :current_bid %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.datetime_field :end_time %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
